@@ -5,7 +5,7 @@
 }
 
 button {
-  margin: 100px;
+  margin: 0 100px;
   width: 200px;
   height: 50px;
   border: 1px solid lightcoral;
@@ -13,6 +13,7 @@ button {
   color: white;
   font-size: 18px;
   transition: all 500ms ease;
+  position: relative;
 }
 
 button:hover {
@@ -20,5 +21,28 @@ button:hover {
   background-color: white;
   color: lightcoral;
 }
+button:hover ~ .box {
+  transform: translateX(0);
+}
 
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  transform: translateX(-200px);
+  transition: all 500ms ease;
+}
+
+.overlay {
+  width: 200px;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.364);
+  position: absolute;
+  top: 0;
+  transition: all 500ms ease;
+}
+
+button:hover .overlay {
+  height: 50px;
+}
 
