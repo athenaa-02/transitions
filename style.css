@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-button {
+.submit {
   margin: 0 100px;
   width: 200px;
   height: 50px;
@@ -16,21 +16,26 @@ button {
   position: relative;
 }
 
-button:hover {
+.submit:hover {
   cursor: pointer;
   background-color: white;
   color: lightcoral;
 }
-button:hover ~ .box {
+/* button:hover ~ .box {
   transform: translateX(0);
-}
+} */
 
 .box {
   width: 200px;
   height: 200px;
   background-color: lightblue;
-  transform: translateX(-200px);
   transition: all 500ms ease;
+  /* transform: rotate(50deg); */
+  /* transform: scaleY(1.2); */
+  /* transform: translateX(20px) rotate(50deg) scaleY(2); */
+  /* rotate: 50deg;
+  scale: 2; */
+  transform: skew(-80deg);
 }
 
 .overlay {
@@ -42,7 +47,56 @@ button:hover ~ .box {
   transition: all 500ms ease;
 }
 
-button:hover .overlay {
+.submit:hover .overlay {
   height: 50px;
 }
 
+.cancel {
+  margin: 0 100px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid lightsalmon;
+  background-color: lightsalmon;
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+.red_overlay {
+  width: 0;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%) skew(-70deg);
+  transition: all 600ms ease;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  z-index: 2;
+  transform: translate(-50%);
+}
+.cancel:hover .red_overlay {
+    cursor: pointer;
+  width: 100%;
+  transform: translate(-50%) skew(0);
+}
+
+.cancel:hover {
+  cursor: pointer;
+}
+
+.cancel::after {
+  content: " asnh";
+  background-color: red;
+  position: absolute;
+  display: none;
+  top: -20px;
+}
+
+.cancel:hover::after {
+  display: inline;
+}
