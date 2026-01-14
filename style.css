@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 100px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid lightcoral;
+  background-color: lightcoral;
+  color: white;
+  font-size: 18px;
+  transition: all 500ms ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: lightcoral;
+}
+
+
